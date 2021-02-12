@@ -34,7 +34,7 @@ print('Please wait...', end="\n\n")
 browser.get(URL)
 
 try:
-    search_bar = wait.until(EC.presence_of_element_located((By.ID, 'SEARCH_FORM_INPUT_homepage-header-big')))
+    search_bar = wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div/header/nav/div[1]/div/form/div[1]/input')))
     search_bar.clear()
     search_bar.click()
     search_bar.send_keys(image_name, Keys.RETURN)
@@ -59,7 +59,7 @@ while no_of_pagedowns:
     time.sleep(0.4)
     no_of_pagedowns-=1
     
-image_elements = browser.find_elements_by_css_selector('div ._2zEKz')
+image_elements = browser.find_elements_by_class_name('_2UpQX')
 
 i = 0
 files_count = 0
